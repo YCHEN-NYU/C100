@@ -12,7 +12,7 @@ class Point{
         void set_x(double x);
         void set_y(double y);
         void set_xy(double x, double y);
-        void print() const;
+        virtual void print() const;
 };
 #endif
 

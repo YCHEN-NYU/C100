@@ -1,5 +1,4 @@
 #include <iostream>
-#include <typeinfo>
 #include "Point.h"
 #include "MovingPoint.h"
 using namespace std;
@@ -61,8 +60,6 @@ int main() {
 
     Point *center_of_court = new Point(10, 20);
     center_of_court->print();
-    cout << "typeid = " << typeid(center_of_court).name() << endl;
-    cout << "typeid = " << typeid(*center_of_court).name() << endl;
     delete center_of_court;
 
     MovingPoint *player1 = new MovingPoint(10, 20, 5, 5);
@@ -71,16 +68,15 @@ int main() {
     player1->print();
     delete player1;
 
-    // upcast: always permissible and safe
-    Point *south_corner = new MovingPoint(-10, 15, 1, 2);
-    south_corner->print();
+    Point southeast_corner = MovingPoint(-10, 40, 5, 8);
+    southeast_corner.print();
 
-    cout << "typeid = " << typeid(*south_corner).name() << endl;
-    // downcast: requires explicit casting operator
-    MovingPoint *mid_point = (MovingPoint *) south_corner;
-    mid_point->print();
-    delete south_corner;
+    Point *southwest_corner = MovingPoint(-10, 20, 4, 6);
+    southwest_corner->print();
 
+    Point *northeast_corner = new MovingPoint(30, 40, 7, 8);
+    northeast_corner->print();
+    delete northeast_corner();
     return 0;
 
 }
