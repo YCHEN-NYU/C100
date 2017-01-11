@@ -1,0 +1,2 @@
+sum 	20
+average 	 3.33
