@@ -15,8 +15,13 @@ class Point{
         const Point operator+(int delta) const;
         const Point operator-(const Point &point) const;
         const Point operator-(int delta) const;
-
+        Point &operator+=(const Point &point);
+        Point &operator+=(int value_to_add);
+        Point operator++();
+        const Point operator++(int dummy);
         
+        friend std::ostream &operator<<(std::ostream &out, const Point &point);
+        friend std::istream &operator>>(std::istream &in, Point &point);
 };
 #endif
 

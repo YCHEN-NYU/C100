@@ -29,3 +29,38 @@ const Point Point::operator-(const Point &point) const{
 const Point Point::operator-(int delta) const{
     return Point(this->x - delta, this->y - delta);
 }
+
+Point & Point::operator+=(const Point &point){
+    this->x += point.get_x();
+    this->y += point.get_y();
+    return *this;
+}
+
+Point & Point::operator+=(int value_to_add){
+    this->x += value_to_add;
+    this->y += value_to_add;
+    return *this;
+}
+
+Point Point::operator++(){
+    ++x;
+    ++y;
+    return *this;
+}
+
+const Point Point::operator++(int dummy){
+    Point old(*this);
+    ++x;
+    ++y;
+    return old;
+}
+
+ostream &operator<<(ostream &out, const Point &point){
+    out << "(" << point.x << ", " << point.y << ")\n";
+    return out;
+}
+
+istream &operator>>(istream &in, Point &point){
+    in >> point.x >> point.y;
+    return in;
+}

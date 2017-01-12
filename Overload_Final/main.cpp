@@ -17,6 +17,23 @@ int main()
 
     Point backward_unit_position = origin.operator-(7);
     backward_unit_position.print();
+
+    origin.operator+=(Point(-8, -9));
+    origin.print();
+    
+    origin.operator+=(10);
+    origin.print();
+
+    cout << "prefix: ++Point " << endl; 
+    cout << ++origin;
+    cout << origin;
+    cout << "postfix: Point++ " << endl;
+    cout << origin++;
+    cout << origin;
+
+    
+    
+
     return 0;
 }
     
