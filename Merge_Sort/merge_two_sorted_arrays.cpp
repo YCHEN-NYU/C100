@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 
-
 int main()
 {
     int first_array[] = {-100, 1, 3,4,  8, 10, 34, 78, 333, 87}, second_array[] = {-1, 0, 2, 7, 89, 233, 766, 1000};
