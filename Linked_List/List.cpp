@@ -22,7 +22,7 @@ void List::append_node(string song, string artist) {
     current_node->next = new_node;
 }
 
-void print_all() const {
+void print_all() {
     node *current_node = head;
     while(current_node->next != NULL) {
         cout << current_node->song << " | " << current_node->artist << endl;
